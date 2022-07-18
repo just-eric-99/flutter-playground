@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_playground/utils/const.dart';
+import 'package:flutter_playground/widgets/item_card.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +12,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: Constants.appName,
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -38,9 +41,17 @@ class _MyHomePageState extends State<MyHomePage> {
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = [
-    Text(
-      'Index 0: Home',
-      style: optionStyle,
+    // Text(
+    //   'Index 0: Home',
+    //   style: optionStyle,
+    // ),
+    Center(
+      child: ItemCard(
+        img: "https://picsum.photos/200/120",
+        title: "This is a sample image",
+        address: "No address",
+        rating: "Good",
+      )
     ),
     Text(
       'Index 1: Search',

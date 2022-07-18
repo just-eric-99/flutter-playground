@@ -8,7 +8,7 @@ class ItemCard extends StatefulWidget {
   final String rating;
 
   const ItemCard({
-    required Key key,
+    Key? key,
     required this.img,
     required this.title,
     required this.address,
@@ -22,6 +22,7 @@ class ItemCard extends StatefulWidget {
 class _ItemCardState extends State<ItemCard> {
   @override
   Widget build(BuildContext context) {
+    precacheImage(Image.network(widget.img).image, context);
     return Padding(
       padding: const EdgeInsets.only(top: 5.0, bottom: 5.0),
       child: SizedBox(
@@ -55,7 +56,7 @@ class _ItemCardState extends State<ItemCard> {
                         topLeft: Radius.circular(10),
                         topRight: Radius.circular(10),
                       ),
-                      child: Image.asset(
+                      child: Image.network(
                         widget.img,
                         fit: BoxFit.cover,
                       ),
@@ -68,7 +69,7 @@ class _ItemCardState extends State<ItemCard> {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(4.0)),
                       child: Padding(
-                        padding: EdgeInsets.all(2.0),
+                        padding: const EdgeInsets.all(2.0),
                         child: Row(
                           children: <Widget>[
                             Icon(
