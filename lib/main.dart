@@ -12,7 +12,6 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: Constants.appName,
@@ -40,32 +39,133 @@ class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = [
+  static final List<Widget> _widgetOptions = [
     // Text(
     //   'Index 0: Home',
     //   style: optionStyle,
     // ),
-    Center(
-      child: ItemCard(
-        img: "https://picsum.photos/200/120",
-        title: "This is a sample image",
-        address: "No address",
-        rating: "Good",
-      )
+    ListView(
+      padding: EdgeInsets.all(5.0),
+      scrollDirection: Axis.vertical,
+      children: <Widget>[
+        SizedBox(
+          height: 200,
+          child: ListView(
+            scrollDirection: Axis.horizontal,
+            children: const [
+              Center(
+                  child: ItemCard(
+                img: "https://picsum.photos/200/120",
+                title: "Title",
+                schedule: "Sat 13/08/2022",
+                price: "\$200",
+              )),
+              Center(
+                  child: ItemCard(
+                img: "https://picsum.photos/200/120",
+                title: "Title",
+                schedule: "Sat 13/08/2022",
+                price: "\$200",
+              )),
+              Center(
+                  child: ItemCard(
+                img: "https://picsum.photos/200/120",
+                title: "Title",
+                schedule: "Sat 13/08/2022",
+                price: "\$200",
+              )),
+              Center(
+                  child: ItemCard(
+                img: "https://picsum.photos/200/120",
+                title: "Title",
+                schedule: "Sat 13/08/2022",
+                price: "\$200",
+              )),
+              Center(
+                  child: ItemCard(
+                img: "https://picsum.photos/200/120",
+                title: "Title",
+                schedule: "Sat 13/08/2022",
+                price: "\$200",
+              )),
+              Center(
+                  child: ItemCard(
+                img: "https://picsum.photos/200/120",
+                title: "Title",
+                schedule: "Sat 13/08/2022",
+                price: "\$200",
+              )),
+            ],
+          ),
+        ),
+        const SizedBox(
+          height: 100,
+        ),
+        SizedBox(
+          height: 200,
+          child: ListView(
+            scrollDirection: Axis.horizontal,
+            children: const [
+              Center(
+                  child: ItemCard(
+                img: "https://picsum.photos/200/120",
+                title: "Title",
+                schedule: "Sat 13/08/2022",
+                price: "\$200",
+              )),
+              Center(
+                  child: ItemCard(
+                img: "https://picsum.photos/200/120",
+                title: "Title",
+                schedule: "Sat 13/08/2022",
+                price: "\$200",
+              )),
+              Center(
+                  child: ItemCard(
+                img: "https://picsum.photos/200/120",
+                title: "Title",
+                schedule: "Sat 13/08/2022",
+                price: "\$200",
+              )),
+              Center(
+                  child: ItemCard(
+                img: "https://picsum.photos/200/120",
+                title: "Title",
+                schedule: "Sat 13/08/2022",
+                price: "\$200",
+              )),
+              Center(
+                  child: ItemCard(
+                img: "https://picsum.photos/200/120",
+                title: "Title",
+                schedule: "Sat 13/08/2022",
+                price: "\$200",
+              )),
+              Center(
+                  child: ItemCard(
+                img: "https://picsum.photos/200/120",
+                title: "Title",
+                schedule: "Sat 13/08/2022",
+                price: "\$200",
+              )),
+            ],
+          ),
+        ),
+      ],
     ),
-    Text(
+    const Text(
       'Index 1: Search',
       style: optionStyle,
     ),
-    Text(
+    const Text(
       'Index 2: Tickets',
       style: optionStyle,
     ),
-    Text(
+    const Text(
       'Index 3: Favorites',
       style: optionStyle,
     ),
-    Text(
+    const Text(
       'Index 4: Personalize',
       style: optionStyle,
     ),
@@ -80,6 +180,17 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        centerTitle: true,
+        title: Text(
+          Constants.appName,
+          style: const TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+          ),
+        ),
+      ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
@@ -112,6 +223,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.amber[800],
+        enableFeedback: false,
         onTap: _onItemTapped,
       ),
     );
