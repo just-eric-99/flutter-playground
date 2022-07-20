@@ -55,42 +55,42 @@ class _MyHomePageState extends State<MyHomePage> {
             children: const [
               Center(
                   child: ItemCard(
-                img: "https://picsum.photos/200/120",
+                img: "https://images.freeimages.com/images/large-previews/745/happy-friends-1057580.jpg",
                 title: "Title",
                 schedule: "Sat 13/08/2022",
                 price: "\$200",
               )),
               Center(
                   child: ItemCard(
-                img: "https://picsum.photos/200/120",
+                img: "https://images.freeimages.com/images/large-previews/745/happy-friends-1057580.jpg",
                 title: "Title",
                 schedule: "Sat 13/08/2022",
                 price: "\$200",
               )),
               Center(
                   child: ItemCard(
-                img: "https://picsum.photos/200/120",
+                img: "https://images.freeimages.com/images/large-previews/745/happy-friends-1057580.jpg",
                 title: "Title",
                 schedule: "Sat 13/08/2022",
                 price: "\$200",
               )),
               Center(
                   child: ItemCard(
-                img: "https://picsum.photos/200/120",
+                img: "https://images.freeimages.com/images/large-previews/745/happy-friends-1057580.jpg",
                 title: "Title",
                 schedule: "Sat 13/08/2022",
                 price: "\$200",
               )),
               Center(
                   child: ItemCard(
-                img: "https://picsum.photos/200/120",
+                img: "https://images.freeimages.com/images/large-previews/745/happy-friends-1057580.jpg",
                 title: "Title",
                 schedule: "Sat 13/08/2022",
                 price: "\$200",
               )),
               Center(
                   child: ItemCard(
-                img: "https://picsum.photos/200/120",
+                img: "https://images.freeimages.com/images/large-previews/745/happy-friends-1057580.jpg",
                 title: "Title",
                 schedule: "Sat 13/08/2022",
                 price: "\$200",
@@ -108,42 +108,42 @@ class _MyHomePageState extends State<MyHomePage> {
             children: const [
               Center(
                   child: ItemCard(
-                img: "https://picsum.photos/200/120",
+                img: "https://images.freeimages.com/images/large-previews/745/happy-friends-1057580.jpg",
                 title: "Title",
                 schedule: "Sat 13/08/2022",
                 price: "\$200",
               )),
               Center(
                   child: ItemCard(
-                img: "https://picsum.photos/200/120",
+                img: "https://images.freeimages.com/images/large-previews/745/happy-friends-1057580.jpg",
                 title: "Title",
                 schedule: "Sat 13/08/2022",
                 price: "\$200",
               )),
               Center(
                   child: ItemCard(
-                img: "https://picsum.photos/200/120",
+                img: "https://images.freeimages.com/images/large-previews/745/happy-friends-1057580.jpg",
                 title: "Title",
                 schedule: "Sat 13/08/2022",
                 price: "\$200",
               )),
               Center(
                   child: ItemCard(
-                img: "https://picsum.photos/200/120",
+                img: "https://images.freeimages.com/images/large-previews/745/happy-friends-1057580.jpg",
                 title: "Title",
                 schedule: "Sat 13/08/2022",
                 price: "\$200",
               )),
               Center(
                   child: ItemCard(
-                img: "https://picsum.photos/200/120",
+                img: "https://images.freeimages.com/images/large-previews/745/happy-friends-1057580.jpg",
                 title: "Title",
                 schedule: "Sat 13/08/2022",
                 price: "\$200",
               )),
               Center(
                   child: ItemCard(
-                img: "https://picsum.photos/200/120",
+                img: "https://images.freeimages.com/images/large-previews/745/happy-friends-1057580.jpg",
                 title: "Title",
                 schedule: "Sat 13/08/2022",
                 price: "\$200",

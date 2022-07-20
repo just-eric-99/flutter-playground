@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_playground/utils/const.dart';
 
 class ItemCard extends StatefulWidget {
@@ -46,10 +47,24 @@ class _ItemCardState extends State<ItemCard> {
                           topLeft: Radius.circular(5),
                           topRight: Radius.circular(5),
                         ),
-                        child: Image.network(
-                          widget.img,
-                          fit: BoxFit.cover,
-                        ),
+                        child: CachedNetworkImage(
+                          placeholder: (context, url) => const Center(
+                            child: SizedBox(
+                              height: 50,
+                              width: 50,
+                              child: CircularProgressIndicator(
+                                color: Colors.black26,
+                              ),
+                            ),
+                          ),
+                          imageUrl: widget.img,
+                        )
+
+
+                        // Image.network(
+                        //   widget.img,
+                        //   fit: BoxFit.cover,
+                        // ),
                       ),
                     ),
                     Positioned(
