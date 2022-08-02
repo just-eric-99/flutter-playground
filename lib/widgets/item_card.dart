@@ -1,30 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:json_annotation/json_annotation.dart';
 import 'package:flutter_playground/utils/const.dart';
+part 'item_card.g.dart';
 
+@JsonSerializable()
 class ItemCard extends StatefulWidget {
   final String img;
   final String title;
   final String price;
   final String schedule;
 
-  const ItemCard({
-    Key? key,
+  ItemCard({
     required this.img,
     required this.title,
     required this.price,
     required this.schedule,
-  }) : super(key: key);
+  });
 
   @override
   State<StatefulWidget> createState() => _ItemCardState();
+
+  factory ItemCard.fromJson(Map<String, dynamic> json) => _$ItemCardFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ItemCardToJson(this);
 }
 
 class _ItemCardState extends State<ItemCard> {
-  dynamic precacheImageImg;
   @override
   Widget build(BuildContext context) {
-    precacheImageImg = precacheImage(Image.network(widget.img).image, context);
     return Padding(
       padding: const EdgeInsets.only(top: 5.0, bottom: 5.0),
       child: SizedBox(
@@ -58,13 +62,7 @@ class _ItemCardState extends State<ItemCard> {
                             ),
                           ),
                           imageUrl: widget.img,
-                        )
-
-
-                        // Image.network(
-                        //   widget.img,
-                        //   fit: BoxFit.cover,
-                        // ),
+                        ),
                       ),
                     ),
                     Positioned(
@@ -100,26 +98,7 @@ class _ItemCardState extends State<ItemCard> {
                           ),
                         ),
                       ),
-                    )
-                    // Positioned(
-                    //   top: 6.0,
-                    //   left: 6.0,
-                    //   child: Card(
-                    //     shape: RoundedRectangleBorder(
-                    //         borderRadius: BorderRadius.circular(3.0)),
-                    //     child: const Padding(
-                    //       padding: EdgeInsets.all(4.0),
-                    //       child: Text(
-                    //         " OPEN",
-                    //         style: TextStyle(
-                    //           fontSize: 10.0,
-                    //           color: Colors.green,
-                    //           fontWeight: FontWeight.bold,
-                    //         ),
-                    //       ),
-                    //     ),
-                    //   ),
-                    // ),
+                    ),
                   ],
                 ),
               ),
@@ -153,22 +132,6 @@ class _ItemCardState extends State<ItemCard> {
                   ),
                 ),
               ),
-              // Padding(
-              //   padding: const EdgeInsets.all(2.0),
-              //   child: SizedBox(
-              //     width: MediaQuery
-              //         .of(context)
-              //         .size
-              //         .width,
-              //     child: Text(
-              //       widget.address,
-              //       style: const TextStyle(
-              //         fontSize: 12.0,
-              //         fontWeight: FontWeight.w300,
-              //       ),
-              //     ),
-              //   ),
-              // ),
               const SizedBox(height: 10.0),
             ],
           ),

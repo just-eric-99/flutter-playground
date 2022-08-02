@@ -1,0 +1,34 @@
+{
+  "items" : [
+    {
+      "img": "https://images.freeimages.com/images/large-previews/745/happy-friends-1057580.jpg",
+      "title": "Title 1",
+      "schedule": "Sat 13/08/2022",
+      "price": "100"
+    },
+    {
+      "img": "https://cdn.pixabay.com/photo/2022/07/05/18/10/butterfly-7303688_960_720.jpg",
+      "title": "Title 2",
+      "schedule": "Sat 13/08/2022",
+      "price": "$220"
+    },
+    {
+      "img": "https://i.picsum.photos/id/237/400/300.jpg?hmac=32RuLp2fb9I2fzPP3U-6REXQ6sZAbN8ML7_dt3R7wQ8",
+      "title": "Title 3",
+      "schedule": "Sat 13/08/2022",
+      "price": "$30"
+    },
+    {
+      "img": "https://i.picsum.photos/id/1/5616/3744.jpg?hmac=kKHwwU8s46oNettHKwJ24qOlIAsWN9d2TtsXDoCWWsQ",
+      "title": "Title 4",
+      "schedule": "Sat 13/08/2022",
+      "price": "$58"
+    },
+    {
+      "img": "https://i.picsum.photos/id/1000/5626/3635.jpg?hmac=qWh065Fr_M8Oa3sNsdDL8ngWXv2Jb-EE49ZIn6c0P-g",
+      "title": "Title 5",
+      "schedule": "Sat 13/08/2022",
+      "price": "$120"
+    }
+  ]
+}

@@ -1,4 +1,8 @@
+import 'dart:convert';
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_playground/utils/const.dart';
 import 'package:flutter_playground/widgets/item_card.dart';
 
@@ -39,11 +43,18 @@ class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static final List<Widget> _widgetOptions = [
-    // Text(
-    //   'Index 0: Home',
-    //   style: optionStyle,
-    // ),
+
+
+
+   static List<ItemCard> itemCards =  [];
+   void readJson() {
+      final String response = rootBundle.loadString('data/home_items.json') as String;
+      print('response' + response);
+    final data = json.decode(response);
+        itemCards = data["items"];
+    }
+
+   final List<Widget> _widgetOptions = [
     ListView(
       padding: EdgeInsets.all(5.0),
       scrollDirection: Axis.vertical,
@@ -52,50 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
           height: 200,
           child: ListView(
             scrollDirection: Axis.horizontal,
-            children: const [
-              Center(
-                  child: ItemCard(
-                img: "https://images.freeimages.com/images/large-previews/745/happy-friends-1057580.jpg",
-                title: "Title",
-                schedule: "Sat 13/08/2022",
-                price: "\$200",
-              )),
-              Center(
-                  child: ItemCard(
-                img: "https://images.freeimages.com/images/large-previews/745/happy-friends-1057580.jpg",
-                title: "Title",
-                schedule: "Sat 13/08/2022",
-                price: "\$200",
-              )),
-              Center(
-                  child: ItemCard(
-                img: "https://images.freeimages.com/images/large-previews/745/happy-friends-1057580.jpg",
-                title: "Title",
-                schedule: "Sat 13/08/2022",
-                price: "\$200",
-              )),
-              Center(
-                  child: ItemCard(
-                img: "https://images.freeimages.com/images/large-previews/745/happy-friends-1057580.jpg",
-                title: "Title",
-                schedule: "Sat 13/08/2022",
-                price: "\$200",
-              )),
-              Center(
-                  child: ItemCard(
-                img: "https://images.freeimages.com/images/large-previews/745/happy-friends-1057580.jpg",
-                title: "Title",
-                schedule: "Sat 13/08/2022",
-                price: "\$200",
-              )),
-              Center(
-                  child: ItemCard(
-                img: "https://images.freeimages.com/images/large-previews/745/happy-friends-1057580.jpg",
-                title: "Title",
-                schedule: "Sat 13/08/2022",
-                price: "\$200",
-              )),
-            ],
+            children: itemCards,
           ),
         ),
         const SizedBox(
@@ -105,50 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
           height: 200,
           child: ListView(
             scrollDirection: Axis.horizontal,
-            children: const [
-              Center(
-                  child: ItemCard(
-                img: "https://images.freeimages.com/images/large-previews/745/happy-friends-1057580.jpg",
-                title: "Title",
-                schedule: "Sat 13/08/2022",
-                price: "\$200",
-              )),
-              Center(
-                  child: ItemCard(
-                img: "https://images.freeimages.com/images/large-previews/745/happy-friends-1057580.jpg",
-                title: "Title",
-                schedule: "Sat 13/08/2022",
-                price: "\$200",
-              )),
-              Center(
-                  child: ItemCard(
-                img: "https://images.freeimages.com/images/large-previews/745/happy-friends-1057580.jpg",
-                title: "Title",
-                schedule: "Sat 13/08/2022",
-                price: "\$200",
-              )),
-              Center(
-                  child: ItemCard(
-                img: "https://images.freeimages.com/images/large-previews/745/happy-friends-1057580.jpg",
-                title: "Title",
-                schedule: "Sat 13/08/2022",
-                price: "\$200",
-              )),
-              Center(
-                  child: ItemCard(
-                img: "https://images.freeimages.com/images/large-previews/745/happy-friends-1057580.jpg",
-                title: "Title",
-                schedule: "Sat 13/08/2022",
-                price: "\$200",
-              )),
-              Center(
-                  child: ItemCard(
-                img: "https://images.freeimages.com/images/large-previews/745/happy-friends-1057580.jpg",
-                title: "Title",
-                schedule: "Sat 13/08/2022",
-                price: "\$200",
-              )),
-            ],
+            children: itemCards,
           ),
         ),
       ],
@@ -205,7 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.search_outlined),
+            icon: Icon (Icons.search_outlined),
             label: '',
           ),
           BottomNavigationBarItem(
